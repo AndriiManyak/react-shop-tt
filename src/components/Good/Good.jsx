@@ -2,12 +2,16 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { actions } from '../../store/backet';
 
 import './Good.scss';
 
 export const Good = ({ good }) => {
+  const dispatch = useDispatch();
   const [purchase, setPurchase] = useState({
     id: good.id,
+    title: good.title,
     color: good.colors[0],
     size: good.sizes[0],
     quantity: 1,
@@ -30,6 +34,7 @@ export const Good = ({ good }) => {
     event.preventDefault();
 
     console.log(purchase);
+    dispatch(actions.add(purchase));
   };
 
   const increaseQuantity = () => {
