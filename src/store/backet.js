@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import initialState from './initialState';
 
 const ADD = 'basket/ADD';
@@ -16,7 +17,9 @@ export const actions = {
 };
 
 const basketReducer = (state = initialState, action) => {
-  switch (action) {
+  console.log(action);
+
+  switch (action.type) {
     case ADD:
       return {
         ...state,
