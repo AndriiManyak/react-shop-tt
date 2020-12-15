@@ -13,7 +13,7 @@ const goodsReducer = (state = initialState, action) => {
   if (action.type === SAVE) {
     return {
       ...state,
-      goods: [...action.users],
+      goods: [...action.goods],
     };
   }
 
