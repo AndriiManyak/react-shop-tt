@@ -1,11 +1,11 @@
-import { createStore, cobmineReducers } from 'redux';
+import { createStore, combineReducers } from 'redux';
 import goodsReducer from './goods';
 
 export function getGoods(state) {
   return state.goodsState.goods;
 }
 
-const reducer = cobmineReducers({
+const reducer = combineReducers({
   goodsState: goodsReducer,
 });
 
