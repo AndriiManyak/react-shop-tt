@@ -10,11 +10,25 @@ export const Good = ({ good }) => {
     id: good.id,
     color: good.colors[0],
     size: good.sizes[0],
+    quantity: 1,
   });
 
   useEffect(() => {
-    console.log(good);
+    // console.log(good);
   }, []);
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+
+    setPurchase(prevState => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  };
 
   return (
     <div className="Good">
@@ -29,10 +43,19 @@ export const Good = ({ good }) => {
       <div className="Good__purchase-configuration">
         <form>
           <div className="Good__purchase-wrapper">
-            <select>
-              <option>Цвет</option>
-              <option>Желтий</option>
-              <option>Синий</option>
+            <select
+              name="color"
+              value={purchase.color}
+              onChange={handleChange}
+            >
+              {good.colors.map(color => (
+                <option
+                  key={color}
+                  value={color}
+                >
+                  {color}
+                </option>
+              ))}
             </select>
             <p>{`${good.price} грн`}</p>
           </div>
@@ -40,7 +63,7 @@ export const Good = ({ good }) => {
           <div className="Good__size">
             {
               good.sizes.map(size => (
-                <label>
+                <label key={size}>
                   <input
                     type="radio"
                     name="size"
