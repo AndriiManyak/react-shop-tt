@@ -32,13 +32,31 @@ export const Good = ({ good }) => {
     console.log(purchase);
   };
 
+  const increaseQuantity = () => {
+    setPurchase(prevState => ({
+      ...prevState,
+      quantity: Number(prevState.quantity) + 1,
+    }));
+  };
+
+  const decreaseQuantity = () => {
+    if (Number(purchase.quantity) === 1) {
+      return;
+    }
+
+    setPurchase(prevState => ({
+      ...prevState,
+      quantity: Number(prevState.quantity) - 1,
+    }));
+  };
+
   return (
     <div className="Good">
       <img
         src="/../images/shampoo.png"
         alt="shop"
       />
-      <h3>{good.title}</h3>
+      <h2>{good.title}</h2>
       <p>
         {good.description}
       </p>
@@ -59,7 +77,9 @@ export const Good = ({ good }) => {
                 </option>
               ))}
             </select>
-            <p>{`${good.price} грн`}</p>
+            <p>
+              {`${good.price * purchase.quantity * purchase.size / 100} грн`}
+            </p>
           </div>
 
           <div className="Good__size">
@@ -83,12 +103,21 @@ export const Good = ({ good }) => {
             <div className="Good__quantity">
               <button
                 type="button"
+                onClick={decreaseQuantity}
               >
                 -
               </button>
-              1
+
+              <input
+                type="number"
+                name="quantity"
+                value={purchase.quantity}
+                onChange={handleChange}
+              />
+
               <button
                 type="button"
+                onClick={increaseQuantity}
               >
                 +
               </button>
