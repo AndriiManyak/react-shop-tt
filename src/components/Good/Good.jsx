@@ -28,6 +28,8 @@ export const Good = ({ good }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    console.log(purchase);
   };
 
   return (
@@ -41,7 +43,7 @@ export const Good = ({ good }) => {
         {good.description}
       </p>
       <div className="Good__purchase-configuration">
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="Good__purchase-wrapper">
             <select
               name="color"
@@ -68,6 +70,8 @@ export const Good = ({ good }) => {
                     type="radio"
                     name="size"
                     value={size}
+                    checked={size === purchase.size}
+                    onChange={handleChange}
                   />
                   {`${size} мл`}
                 </label>
