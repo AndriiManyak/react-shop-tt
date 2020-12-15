@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.scss';
-import { GoodList } from './components/GoodList/GoodList';
+import { GoodList } from './components/GoodList';
 
 export const App = () => (
   <div>
