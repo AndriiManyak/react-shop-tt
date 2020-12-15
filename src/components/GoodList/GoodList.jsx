@@ -1,16 +1,15 @@
 /* eslint-disable no-console */
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import { Good } from '../Good';
-
 import { goods as goodsToPurchase } from '../../api';
+import { getGoods } from '../../store';
 
 export const GoodList = () => {
-  const [goods, setGoods] = useState([]);
+  const goods = useSelector(getGoods);
 
   useEffect(() => {
-    setGoods(goodsToPurchase);
-
     console.log(goodsToPurchase);
   }, []);
 
