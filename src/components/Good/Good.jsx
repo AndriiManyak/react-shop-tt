@@ -1,24 +1,30 @@
+/* eslint-disable no-console */
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import './Good.scss';
 
-export const Good = () => {
-  const a = 10;
+export const Good = ({ good }) => {
+  const [purchase, setPurchase] = useState({
+    id: good.id,
+    color: good.colors[0],
+    size: good.sizes[0],
+  });
+
+  useEffect(() => {
+    console.log(good);
+  }, []);
 
   return (
     <div className="Good">
       <img
-        src="../../images/shampoo.png"
+        src="/../images/shampoo.png"
         alt="shop"
       />
-      <h3>Шапунь</h3>
+      <h3>{good.title}</h3>
       <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-        Repellat, architecto exercitationem, in nesciunt est,
-        cupiditate necessitatibus totam
-        reiciendis ea reprehenderit nostrum labore adipisci quaerat.
-        Perferendis eveniet minus deleniti alias aut.
+        {good.description}
       </p>
       <div className="Good__purchase-configuration">
         <form>
@@ -28,13 +34,22 @@ export const Good = () => {
               <option>Желтий</option>
               <option>Синий</option>
             </select>
-            <p>200 грн</p>
+            <p>{`${good.price} грн`}</p>
           </div>
 
           <div className="Good__size">
-            <input type="radio" />
-            <input type="radio" />
-            <input type="radio" />
+            {
+              good.sizes.map(size => (
+                <label>
+                  <input
+                    type="radio"
+                    name="size"
+                    value={size}
+                  />
+                  {`${size} мл`}
+                </label>
+              ))
+            }
           </div>
 
           <div className="Good__bottom">
@@ -51,6 +66,7 @@ export const Good = () => {
                 +
               </button>
             </div>
+
             <button
               className="Good__purchase"
               type="submit"
