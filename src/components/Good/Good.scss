@@ -1,10 +1,9 @@
 .Good {
-
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  padding: 30px 45px;
+  padding: 30px;
   background-color: #f8fafc;
   border-radius: 25px;
 
@@ -26,6 +25,11 @@
     display: flex;
     width: 100%;
     justify-content: space-between;
+    margin: 10px 0
+  }
+
+  &__radio-select {
+    margin-bottom: 10px;
   }
 
   &__size {
@@ -35,5 +39,22 @@
 
   &__bottom {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__purchase-button {
+    border: none;
+    border-radius: 30px;
+    padding: 10px 100px;
+    color: white;
+    background: linear-gradient(261.65deg, #EFBB37 -3.95%, #CF9E1F 109.44%);
+    text-transform: uppercase;
+    transition: box-shadow 0.2s;
+    cursor: pointer;
+
+    &:hover {
+      box-shadow: 2px 2px 18px -3px #000000
+    }
   }
 }

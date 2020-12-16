@@ -4,7 +4,6 @@ import React from 'react';
 export const QuantityInput = ({
   decreaseQuantity,
   increaseQuantity,
-  handleChange,
   quantity,
 }) => (
   <div className="QuantityInput">
@@ -15,12 +14,7 @@ export const QuantityInput = ({
       -
     </button>
 
-    <input
-      type="number"
-      name="quantity"
-      value={quantity}
-      onChange={handleChange}
-    />
+    <span>{quantity}</span>
 
     <button
       type="button"

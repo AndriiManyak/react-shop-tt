@@ -98,7 +98,10 @@ export const Good = ({ good }) => {
           <div className="Good__size">
             {
               good.sizes.map(size => (
-                <label key={size}>
+                <label
+                  className="Good__radio-select"
+                  key={size}
+                >
                   <input
                     type="radio"
                     name="size"
@@ -117,13 +120,12 @@ export const Good = ({ good }) => {
               <QuantityInput
                 decreaseQuantity={decreaseQuantity}
                 increaseQuantity={increaseQuantity}
-                handleChange={handleChange}
                 quantity={purchase.quantity}
               />
             </div>
 
             <button
-              className="Good__purchase"
+              className="Good__purchase-button"
               type="submit"
             >
               Купить
