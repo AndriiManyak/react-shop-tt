@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { getBasket } from '../../store';
@@ -12,7 +11,6 @@ export const Basket = () => {
   return (
     <div className="Basket">
       <h2>Корзина</h2>
-      {console.log(goodsInBasket)}
 
       <div className="Basket__list">
         {

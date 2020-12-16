@@ -1,5 +1,5 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './QuantityInput.scss';
 
@@ -32,3 +32,9 @@ export const QuantityInput = ({
     </button>
   </div>
 );
+
+QuantityInput.propTypes = {
+  decreaseQuantity: PropTypes.func.isRequired,
+  increaseQuantity: PropTypes.func.isRequired,
+  quantity: PropTypes.number.isRequired,
+};
