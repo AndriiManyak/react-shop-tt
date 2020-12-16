@@ -20,7 +20,7 @@ export const GoodList = () => {
       {goods.map(good => (
         <Good
           key={good.id}
-          good={good}
+          {...good}
         />
       ))}
 

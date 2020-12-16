@@ -1,21 +1,27 @@
-/* eslint-disable no-console */
-/* eslint-disable react/prop-types */
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { actions } from '../../store/backet';
 import { QuantityInput } from '../QuantityInput';
 
 import './Good.scss';
 
-export const Good = ({ good }) => {
+export const Good = ({
+  title,
+  description,
+  colors,
+  sizes,
+  price,
+  image,
+}) => {
   const dispatch = useDispatch();
   const [purchase, setPurchase] = useState({
-    title: good.title,
-    color: good.colors[0],
-    size: good.sizes[0],
+    title,
+    price,
+    image,
+    color: colors[0],
+    size: sizes[0],
     quantity: 1,
-    price: good.price,
-    image: good.image,
   });
 
   useEffect(() => {
@@ -62,17 +68,17 @@ export const Good = ({ good }) => {
       <div className="Good__image-wrapper">
         <img
           className="Good__image"
-          src={`../../images/${good.image}`}
+          src={`../../images/${image}`}
           alt="shampoo"
         />
       </div>
 
       <h2 className="Good__title">
-        {good.title}
+        {title}
       </h2>
 
       <p className="Good__description">
-        {good.description}
+        {description}
       </p>
 
       <div className="Good__purchase-configuration">
@@ -83,7 +89,7 @@ export const Good = ({ good }) => {
               value={purchase.color}
               onChange={handleChange}
             >
-              {good.colors.map(color => (
+              {colors.map(color => (
                 <option
                   key={color}
                   value={color}
@@ -93,13 +99,13 @@ export const Good = ({ good }) => {
               ))}
             </select>
             <p>
-              {`${good.price * purchase.quantity * purchase.size / 100} грн`}
+              {`${price * purchase.quantity * purchase.size / 100} грн`}
             </p>
           </div>
 
           <div className="Good__size">
             {
-              good.sizes.map(size => (
+              sizes.map(size => (
                 <label
                   className="Good__radio-select"
                   key={size}
@@ -135,4 +141,13 @@ export const Good = ({ good }) => {
       </div>
     </div>
   );
+};
+
+Good.propTypes = {
+  title: PropTypes.string.isRequired,
+  colors: PropTypes.arrayOf(PropTypes.string).isRequired,
+  sizes: PropTypes.arrayOf(PropTypes.string).isRequired,
+  price: PropTypes.number.isRequired,
+  image: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
 };
