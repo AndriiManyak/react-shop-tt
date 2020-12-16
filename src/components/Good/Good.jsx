@@ -62,14 +62,14 @@ export const Good = ({
     setCompare(prevState => !prevState);
   };
 
-  const increaseQuantity = () => {
+  const increaseQuantity = useCallback(() => {
     setPurchase(prevState => ({
       ...prevState,
       quantity: Number(prevState.quantity) + 1,
     }));
-  };
+  }, []);
 
-  const decreaseQuantity = () => {
+  const decreaseQuantity = useCallback(() => {
     if (Number(purchase.quantity) === 1) {
       return;
     }
@@ -78,7 +78,7 @@ export const Good = ({
       ...prevState,
       quantity: Number(prevState.quantity) - 1,
     }));
-  };
+  }, [purchase.quantity]);
 
   return (
     <div className="Good">

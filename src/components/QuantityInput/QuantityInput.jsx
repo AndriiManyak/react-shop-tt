@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import './QuantityInput.scss';
 
-export const QuantityInput = ({
+export const QuantityInput = React.memo(({
   decreaseQuantity,
   increaseQuantity,
   quantity,
@@ -31,7 +31,7 @@ export const QuantityInput = ({
       +
     </button>
   </div>
-);
+));
 
 QuantityInput.propTypes = {
   decreaseQuantity: PropTypes.func.isRequired,
