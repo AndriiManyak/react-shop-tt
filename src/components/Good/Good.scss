@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 
   padding: 30px;
   background-color: #f8fafc;
@@ -10,6 +11,39 @@
 
   &:hover {
     box-shadow: 2px 2px 18px -3px #000000
+  }
+
+  &__new-tag {
+    position: absolute;
+    left: 10px;
+
+    color: white;
+    padding: 5px 20px;
+    font-size: 14px;
+
+    background: linear-gradient(261.65deg, #efbb37 -3.95%, #cf9e1f 109.44%);
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+  }
+
+  &__comparisson {
+    position: absolute;
+    right: 20px;
+    border-radius: 50%;
+    background-color: white;
+
+    padding: 10px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  &__comparisson-image {
+    height: 20px;
+    width: 20px;
   }
 
   &__image-wrapper {
@@ -67,12 +101,17 @@
     background: linear-gradient(261.65deg, #EFBB37 -3.95%, #CF9E1F 109.44%);
     text-transform: uppercase;
     transition: box-shadow 0.2s;
+    outline: none;
     cursor: pointer;
     font-size: 18px;
     font-weight: 600;
 
     &:hover {
       box-shadow: 2px 2px 18px -3px #000000
+    }
+
+    &:active {
+      opacity: 0.8;
     }
   }
 

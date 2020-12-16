@@ -1,8 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { actions } from '../../store/backet';
 import { QuantityInput } from '../QuantityInput';
+
+import comparisson from '../../images/comparisson.svg';
+import comparissonCheck from '../../images/comparisson-check.png';
 
 import './Good.scss';
 
@@ -13,8 +16,10 @@ export const Good = ({
   sizes,
   price,
   image,
+  isNew,
 }) => {
   const dispatch = useDispatch();
+  const [compare, setCompare] = useState(false);
   const [purchase, setPurchase] = useState({
     title,
     price,
@@ -23,9 +28,6 @@ export const Good = ({
     size: sizes[0],
     quantity: 1,
   });
-
-  useEffect(() => {
-  }, []);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -43,6 +45,10 @@ export const Good = ({
       ...purchase,
       id: Date.now(),
     }));
+  };
+
+  const changeCompare = () => {
+    setCompare(prevState => !prevState);
   };
 
   const increaseQuantity = () => {
@@ -65,6 +71,22 @@ export const Good = ({
 
   return (
     <div className="Good">
+      {
+        isNew && (
+          <div className="Good__new-tag">NEW</div>
+        )
+      }
+      <button
+        className="Good__comparisson"
+        type="button"
+        onClick={changeCompare}
+      >
+        <img
+          className="Good__comparisson-image"
+          src={compare ? comparissonCheck : comparisson}
+          alt="comparisson"
+        />
+      </button>
       <div className="Good__image-wrapper">
         <img
           className="Good__image"
@@ -152,4 +174,5 @@ Good.propTypes = {
   price: PropTypes.number.isRequired,
   image: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
+  isNew: PropTypes.bool.isRequired,
 };
