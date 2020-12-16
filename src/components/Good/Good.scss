@@ -6,6 +6,11 @@
   padding: 30px;
   background-color: #f8fafc;
   border-radius: 25px;
+  transition: box-shadow 0.2s;
+
+  &:hover {
+    box-shadow: 2px 2px 18px -3px #000000
+  }
 
   &__image-wrapper {
     overflow: hidden;
@@ -68,6 +73,42 @@
 
     &:hover {
       box-shadow: 2px 2px 18px -3px #000000
+    }
+  }
+
+  &__size {
+    & label {
+      display: block;
+      position: relative;
+      padding-left: 35px;
+      margin-bottom: 12px;
+      cursor: pointer;
+      font-size: 22px;
+      user-select: none;
+
+      &:hover input ~ span {
+        background-color: #ccc;
+      }
+
+      & input:checked ~ span {
+        background-color: #efbb37;
+      }
+    }
+
+    & input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    & span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 25px;
+      width: 25px;
+      background-color: #eee;
+      border-radius: 5px;
     }
   }
 }

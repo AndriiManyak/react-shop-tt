@@ -111,12 +111,14 @@ export const Good = ({
                   key={size}
                 >
                   <input
+                    className="Good__radiobutton"
                     type="radio"
                     name="size"
                     value={size}
                     checked={size === purchase.size}
                     onChange={handleChange}
                   />
+                  <span className="Good__checkmark" />
                   {`${size} мл`}
                 </label>
               ))
