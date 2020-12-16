@@ -1,6 +1,7 @@
+/* eslint-disable no-console */
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { actions } from '../../store/backet';
 import { QuantityInput } from '../QuantityInput';
@@ -16,6 +17,20 @@ export const BasketGood = ({
   id,
 }) => {
   const dispatch = useDispatch();
+  const [goodsQuanity, setGoodsQuantity] = useState(quantity);
+
+  const increaseQuantity = () => {
+    console.log(goodsQuanity);
+    setGoodsQuantity(goodsQuanity + 1);
+  };
+
+  const decreaseQuantity = () => {
+    if (Number(goodsQuanity) === 1) {
+      return;
+    }
+
+    setGoodsQuantity(goodsQuanity - 1);
+  };
 
   const deleteFromBasket = (goodId) => {
     dispatch(actions.delete(goodId));
@@ -30,15 +45,17 @@ export const BasketGood = ({
       />
       <p>{title}</p>
       <p>{color}</p>
-      <p>{size}</p>
+      <p>{`${size} мл`}</p>
 
       <div>
         <QuantityInput
-          quantity={quantity}
+          decreaseQuantity={decreaseQuantity}
+          increaseQuantity={increaseQuantity}
+          quantity={goodsQuanity}
         />
       </div>
 
-      <p>{`${price * quantity * size / 100} грн`}</p>
+      <p>{`${price * goodsQuanity * size / 100} грн`}</p>
 
       <button
         type="button"
