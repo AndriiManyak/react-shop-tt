@@ -116,13 +116,11 @@ export const Good = ({ good }) => {
           </div>
 
           <div className="Good__bottom">
-            <div className="Good__quantity">
-              <QuantityInput
-                decreaseQuantity={decreaseQuantity}
-                increaseQuantity={increaseQuantity}
-                quantity={purchase.quantity}
-              />
-            </div>
+            <QuantityInput
+              decreaseQuantity={decreaseQuantity}
+              increaseQuantity={increaseQuantity}
+              quantity={purchase.quantity}
+            />
 
             <button
               className="Good__purchase-button"

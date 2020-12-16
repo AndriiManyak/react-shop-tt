@@ -44,6 +44,7 @@
   }
 
   &__purchase-button {
+    height: 40px;
     border: none;
     border-radius: 30px;
     padding: 10px 100px;
@@ -52,6 +53,8 @@
     text-transform: uppercase;
     transition: box-shadow 0.2s;
     cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
 
     &:hover {
       box-shadow: 2px 2px 18px -3px #000000

@@ -1,0 +1,22 @@
+.QuantityInput {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  background-color:  #e2e9f0;
+  border-radius: 30px;
+  padding: 10px;
+
+  &__button {
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  &__quantity {
+    display: inline-block;
+    font-size: 20px;
+    padding: 0 15px;
+  }
+}

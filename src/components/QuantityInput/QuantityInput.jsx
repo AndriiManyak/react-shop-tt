@@ -1,6 +1,8 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 
+import './QuantityInput.scss';
+
 export const QuantityInput = ({
   decreaseQuantity,
   increaseQuantity,
@@ -8,15 +10,21 @@ export const QuantityInput = ({
 }) => (
   <div className="QuantityInput">
     <button
+      className="QuantityInput__button"
       type="button"
       onClick={decreaseQuantity}
     >
       -
     </button>
 
-    <span>{quantity}</span>
+    <span
+      className="QuantityInput__quantity"
+    >
+      {quantity}
+    </span>
 
     <button
+      className="QuantityInput__button"
       type="button"
       onClick={increaseQuantity}
     >
