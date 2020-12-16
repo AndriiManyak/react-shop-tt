@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
@@ -8,6 +9,7 @@ import comparisson from '../../images/comparisson.svg';
 import comparissonCheck from '../../images/comparisson-check.png';
 
 import './Good.scss';
+import { ColorSelect } from '../ColorSelect/ColorSelect';
 
 export const Good = ({
   title,
@@ -28,6 +30,13 @@ export const Good = ({
     size: sizes[0],
     quantity: 1,
   });
+
+  const selectColor = (color) => {
+    setPurchase(prevState => ({
+      ...prevState,
+      color,
+    }));
+  };
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -106,20 +115,11 @@ export const Good = ({
       <div className="Good__purchase-configuration">
         <form onSubmit={handleSubmit}>
           <div className="Good__purchase-wrapper">
-            <select
-              name="color"
-              value={purchase.color}
-              onChange={handleChange}
-            >
-              {colors.map(color => (
-                <option
-                  key={color}
-                  value={color}
-                >
-                  {color}
-                </option>
-              ))}
-            </select>
+            <ColorSelect
+              colors={colors}
+              selectedColor={purchase.color}
+              selectColor={selectColor}
+            />
             <p>
               {`${price * purchase.quantity * purchase.size / 100} грн`}
             </p>
