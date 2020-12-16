@@ -1,6 +1,5 @@
-/* eslint-disable max-len */
-/* eslint-disable react/prop-types */
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { actions } from '../../store/backet';
 import { QuantityInput } from '../QuantityInput';
@@ -65,4 +64,14 @@ export const BasketGood = ({
       </button>
     </div>
   );
+};
+
+BasketGood.propTypes = {
+  title: PropTypes.string.isRequired,
+  color: PropTypes.string.isRequired,
+  size: PropTypes.string.isRequired,
+  quantity: PropTypes.number.isRequired,
+  price: PropTypes.number.isRequired,
+  id: PropTypes.number.isRequired,
+  image: PropTypes.string.isRequired,
 };
