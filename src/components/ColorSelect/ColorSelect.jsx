@@ -25,7 +25,10 @@ export const ColorSelect = ({
   const handleClickOutside = (event) => {
     const { target } = event;
 
-    if (!target.classList.contains('ColorSelect')) {
+    if (
+      !target.classList.contains('ColorSelect')
+      && !target.classList.contains('ColorSelect__list-header')
+    ) {
       setIsListVisible(false);
     }
   };

@@ -1,9 +1,21 @@
-# React Starter Pack
+# Project Title
+- [DEMO](https://andriimanyak.github.io/react-shop-tt/)
 
-To use this template click `Use this template`
+## Local deployment
 
-### Available Scripts
+### Dependencies
+* Node v12.16.3 and higher
+* NPM v6.14.4 and higher
+* React v17.0.1
+* React-dom": "^17.0.1",
+* Classnames v2.2.6
+* Prop-types v15.7.2
 
-`Deploy` - available to deploy your application to gh-pages
+### Installing
+* Fork and clone this repository
+* Run `npm install` in your terminal
+* Run `npm start`
 
-`SCSS Preprocessor` - available to write your styles with modern style language
+## Troubleshooting
+For any contributing or problem solving you could find me [here](https://t.me/AndriyManyak)
+

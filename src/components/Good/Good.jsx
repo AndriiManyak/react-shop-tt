@@ -99,7 +99,7 @@ export const Good = ({
       <div className="Good__image-wrapper">
         <img
           className="Good__image"
-          src={`../../images/${image}`}
+          src={`images/${image}`}
           alt="shampoo"
         />
       </div>
