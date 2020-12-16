@@ -6,6 +6,10 @@
   border-bottom: 1px solid #cf9e1f;
   padding: 50px 0 25px;
 
+  &:last-child {
+    border: none;
+  }
+
   &__image {
     width: 150px;
     height: 150px;
