@@ -39,7 +39,7 @@ export const BasketGood = ({
       <img
         className="BasketGood__image"
         alt="shampoo"
-        src={`../../images/${image}`}
+        src={`images/${image}`}
       />
       <p>{title}</p>
       <p>{color}</p>
