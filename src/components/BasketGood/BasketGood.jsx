@@ -18,6 +18,7 @@ export const BasketGood = ({
   return (
     <div className="BasketGood">
       <img
+        className="BasketGood__image"
         alt="store"
         src=""
       />
