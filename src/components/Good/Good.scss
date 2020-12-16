@@ -1,5 +1,4 @@
 .Good {
-  width: 570px;
 
   display: flex;
   flex-direction: column;
@@ -8,6 +7,16 @@
   padding: 30px 45px;
   background-color: #F8FAFC;
   border-radius: 25px;
+
+  &__image {
+    height: 260px;
+    width: 260px;
+    object-fit: contain;
+  }
+
+  &__description {
+    margin: 10px 0 20px;
+  }
 
   &__purchase-configuration {
     width: 100%;

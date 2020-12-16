@@ -6,6 +6,8 @@ import { Good } from '../Good';
 import { goods as goodsToPurchase } from '../../api';
 import { getGoods } from '../../store';
 
+import './GoodList.scss';
+
 export const GoodList = () => {
   const goods = useSelector(getGoods);
 
@@ -14,7 +16,7 @@ export const GoodList = () => {
   }, []);
 
   return (
-    <div>
+    <div className="GoodList">
       {goods.map(good => (
         <Good
           key={good.id}

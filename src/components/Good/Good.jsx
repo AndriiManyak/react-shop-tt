@@ -4,6 +4,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { actions } from '../../store/backet';
+import { QuantityInput } from '../QuantityInput';
 
 import './Good.scss';
 
@@ -15,6 +16,7 @@ export const Good = ({ good }) => {
     color: good.colors[0],
     size: good.sizes[0],
     quantity: 1,
+    price: good.price,
   });
 
   useEffect(() => {
@@ -58,13 +60,19 @@ export const Good = ({ good }) => {
   return (
     <div className="Good">
       <img
-        src="/../images/shampoo.png"
+        className="Good__image"
+        src="../src/images/shampoo.png"
         alt="shop"
       />
-      <h2>{good.title}</h2>
-      <p>
+
+      <h2 className="Good__title">
+        {good.title}
+      </h2>
+
+      <p className="Good__description">
         {good.description}
       </p>
+
       <div className="Good__purchase-configuration">
         <form onSubmit={handleSubmit}>
           <div className="Good__purchase-wrapper">
@@ -106,26 +114,12 @@ export const Good = ({ good }) => {
 
           <div className="Good__bottom">
             <div className="Good__quantity">
-              <button
-                type="button"
-                onClick={decreaseQuantity}
-              >
-                -
-              </button>
-
-              <input
-                type="number"
-                name="quantity"
-                value={purchase.quantity}
-                onChange={handleChange}
+              <QuantityInput
+                decreaseQuantity={decreaseQuantity}
+                increaseQuantity={increaseQuantity}
+                handleChange={handleChange}
+                quantity={purchase.quantity}
               />
-
-              <button
-                type="button"
-                onClick={increaseQuantity}
-              >
-                +
-              </button>
             </div>
 
             <button

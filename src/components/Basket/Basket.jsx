@@ -17,7 +17,7 @@ export const Basket = () => {
           goodsInBasket.map(basketGood => (
             <BasketGood
               key={basketGood.id}
-              basketGood={basketGood}
+              {...basketGood}
             />
           ))
         }
