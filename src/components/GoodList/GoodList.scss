@@ -1,0 +1,7 @@
+.GoodList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 450px);
+  gap: 20px;
+  justify-content: space-evenly;
+  margin-top: 50px;
+}

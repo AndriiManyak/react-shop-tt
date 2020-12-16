@@ -1,0 +1,62 @@
+.ColorSelect {
+  border-radius: 25px;
+  background-color: white;
+
+  &__list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+    padding: 5px 15px;
+    background-color: white;
+    border-radius: 25px;
+    outline: none;
+    cursor: pointer;
+  }
+
+  &__selected-color {
+    margin-right: 120px;
+  }
+
+  &__select-arrow {
+    &--active {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__list-wrapper {
+    padding: 5px 5px 20px 0;
+  }
+
+  &__list {
+    height: 85px;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #888;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+  }
+
+  &__list-item {
+    width: 95%;
+    padding: 5px 15px;
+    border: none;
+    background-color: white;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 0 25px 25px 0;
+
+    &:hover {
+      background-color: #afc9e2;
+    }
+  }
+}
