@@ -4,6 +4,8 @@ import { useSelector } from 'react-redux';
 import { getBasket } from '../../store';
 import { BasketGood } from '../BasketGood';
 
+import './Basket.scss';
+
 export const Basket = () => {
   const goodsInBasket = useSelector(getBasket);
 

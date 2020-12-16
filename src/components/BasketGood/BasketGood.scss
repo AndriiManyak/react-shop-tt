@@ -1,6 +1,10 @@
 .BasketGood {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+
+  border-bottom: 1px solid #cf9e1f;
+  padding: 50px 0 25px;
 
   &__image {
     width: 150px;
