@@ -1,9 +1,7 @@
 /* eslint-disable no-console */
 /* eslint-disable react/prop-types */
-/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { getBasket } from '../../store';
+import { useDispatch } from 'react-redux';
 import { actions } from '../../store/backet';
 import { QuantityInput } from '../QuantityInput';
 
@@ -17,6 +15,7 @@ export const Good = ({ good }) => {
     size: good.sizes[0],
     quantity: 1,
     price: good.price,
+    image: good.image,
   });
 
   useEffect(() => {
@@ -60,11 +59,13 @@ export const Good = ({ good }) => {
 
   return (
     <div className="Good">
-      <img
-        className="Good__image"
-        src="../src/images/shampoo.png"
-        alt="shop"
-      />
+      <div className="Good__image-wrapper">
+        <img
+          className="Good__image"
+          src={`../../images/${good.image}`}
+          alt="shampoo"
+        />
+      </div>
 
       <h2 className="Good__title">
         {good.title}

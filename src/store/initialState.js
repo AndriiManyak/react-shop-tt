@@ -3,7 +3,7 @@ const initialGoods = [
   {
     id: 1,
     title: 'Шампунь',
-    image: '',
+    image: 'shampoo1.png',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.',
     price: 200,
     colors: [
@@ -21,7 +21,7 @@ const initialGoods = [
   {
     id: 2,
     title: 'Шампунь',
-    image: '',
+    image: 'shampoo2.png',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.',
     price: 300,
     colors: [
@@ -39,7 +39,7 @@ const initialGoods = [
   {
     id: 3,
     title: 'Шампунь',
-    image: '',
+    image: 'shampoo3.png',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.',
     price: 250,
     colors: [

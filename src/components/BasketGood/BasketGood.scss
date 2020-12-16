@@ -16,4 +16,13 @@
 
     object-fit: contain;
   }
+
+  &__delete-button {
+    border: none;
+    background-color: transparent;
+    font-size: 25px;
+    outline: none;
+    cursor: pointer;
+    color: red;
+  }
 }

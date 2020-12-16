@@ -1,5 +1,5 @@
+/* eslint-disable max-len */
 /* eslint-disable react/prop-types */
-/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { actions } from '../../store/backet';
@@ -14,6 +14,7 @@ export const BasketGood = ({
   quantity,
   price,
   id,
+  image,
 }) => {
   const dispatch = useDispatch();
   const [goodsQuanity, setGoodsQuantity] = useState(quantity);
@@ -38,8 +39,8 @@ export const BasketGood = ({
     <div className="BasketGood">
       <img
         className="BasketGood__image"
-        alt="store"
-        src=""
+        alt="shampoo"
+        src={`../../images/${image}`}
       />
       <p>{title}</p>
       <p>{color}</p>
@@ -56,10 +57,11 @@ export const BasketGood = ({
       <p>{`${price * goodsQuanity * size / 100} грн`}</p>
 
       <button
+        className="BasketGood__delete-button"
         type="button"
         onClick={() => deleteFromBasket(id)}
       >
-        Delete
+        <i className="fa fa-trash" />
       </button>
     </div>
   );

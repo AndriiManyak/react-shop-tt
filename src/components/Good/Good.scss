@@ -7,10 +7,19 @@
   background-color: #f8fafc;
   border-radius: 25px;
 
+  &__image-wrapper {
+    overflow: hidden;
+    border-radius: 25px;
+  }
+
   &__image {
     height: 260px;
     width: 260px;
     object-fit: contain;
+
+    &:hover {
+      transform: scale(1.5);
+    }
   }
 
   &__description {
