@@ -1,12 +1,10 @@
+/* eslint-disable max-len */
 const initialGoods = [
   {
     id: 1,
-    title: 'Шапунь',
+    title: 'Шампунь',
     image: '',
-    description: `loremipsumdolorsit,amet
-consecteturadipisicingelit.Repellat,
-architectoexercitationem,innesciuntest,
-cupiditatenecessitatibustotam`,
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.',
     price: 200,
     colors: [
       'Желтый',
@@ -22,12 +20,9 @@ cupiditatenecessitatibustotam`,
   },
   {
     id: 2,
-    title: 'Шапунь',
+    title: 'Шампунь',
     image: '',
-    description: `loremipsumdolorsit,amet
-consecteturadipisicingelit.Repellat,
-architectoexercitationem,innesciuntest,
-cupiditatenecessitatibustotam`,
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.',
     price: 300,
     colors: [
       'Желтый',
@@ -43,12 +38,9 @@ cupiditatenecessitatibustotam`,
   },
   {
     id: 3,
-    title: 'Шапунь',
+    title: 'Шампунь',
     image: '',
-    description: `loremipsumdolorsit,amet
-consecteturadipisicingelit.Repellat,
-architectoexercitationem,innesciuntest,
-cupiditatenecessitatibustotam`,
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.',
     price: 250,
     colors: [
       'Желтый',
