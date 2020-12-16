@@ -6,6 +6,10 @@
   border-radius: 30px;
   padding: 10px;
 
+  &:hover {
+    background-color: #e2e9f0;;
+  }
+
   &__button {
     border: none;
     background: transparent;
