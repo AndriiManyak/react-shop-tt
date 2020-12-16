@@ -8,6 +8,7 @@
 * NPM v6.14.4 and higher
 * React v17.0.1
 * React-dom": "^17.0.1",
+* "React-redux": "^7.2.2",
 * Classnames v2.2.6
 * Prop-types v15.7.2
 

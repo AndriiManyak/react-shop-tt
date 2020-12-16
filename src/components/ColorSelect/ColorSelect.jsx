@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
@@ -6,7 +5,7 @@ import classNames from 'classnames';
 import './ColorSelect.scss';
 import selectArrow from '../../images/arrow.svg';
 
-export const ColorSelect = ({
+export const ColorSelect = React.memo(({
   colors,
   selectedColor,
   selectColor,
@@ -83,7 +82,7 @@ export const ColorSelect = ({
       }
     </div>
   );
-};
+});
 
 ColorSelect.propTypes = {
   colors: PropTypes.arrayOf(PropTypes.string).isRequired,

@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { actions } from '../../store/backet';
@@ -31,12 +31,14 @@ export const Good = ({
     quantity: 1,
   });
 
-  const selectColor = (color) => {
-    setPurchase(prevState => ({
-      ...prevState,
-      color,
-    }));
-  };
+  const selectColor = useCallback(
+    (color) => {
+      setPurchase(prevState => ({
+        ...prevState,
+        color,
+      }));
+    }, [],
+  );
 
   const handleChange = (event) => {
     const { name, value } = event.target;
