@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+/* eslint-disable no-console */
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
@@ -11,6 +12,23 @@ export const ColorSelect = ({
   selectColor,
 }) => {
   const [isListVisible, setIsListVisible] = useState(false);
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('mouseover', (event) => {
+      if (event.target.classList.contains('GoodList')) {
+        setIsListVisible(false);
+      }
+    });
+  }, []);
+
+  const handleClickOutside = (event) => {
+    const { target } = event;
+
+    if (!target.classList.contains('ColorSelect')) {
+      setIsListVisible(false);
+    }
+  };
 
   const changeListVisibility = () => {
     setIsListVisible(prevState => !prevState);
