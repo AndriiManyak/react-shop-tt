@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
@@ -20,7 +19,6 @@ export const BasketGood = ({
   const [goodsQuanity, setGoodsQuantity] = useState(quantity);
 
   const increaseQuantity = () => {
-    console.log(goodsQuanity);
     setGoodsQuantity(goodsQuanity + 1);
   };
 
