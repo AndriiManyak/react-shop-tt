@@ -22,11 +22,13 @@ export const ColorSelect = React.memo(({
   }, []);
 
   const handleClickOutside = (event) => {
-    const { target } = event;
+    const targetClassList = event.target.classList;
 
     if (
-      !target.classList.contains('ColorSelect')
-      && !target.classList.contains('ColorSelect__list-header')
+      !targetClassList.contains('ColorSelect')
+      && !targetClassList.contains('ColorSelect__list-header')
+      && !targetClassList.contains('ColorSelect__select-arrow')
+      && !targetClassList.contains('ColorSelect__list-item')
     ) {
       setIsListVisible(false);
     }
@@ -44,7 +46,12 @@ export const ColorSelect = React.memo(({
   return (
     <div className="ColorSelect">
       <button
-        className="ColorSelect__list-header"
+        className={
+          classNames(
+            'ColorSelect__list-header',
+            { 'ColorSelect__list-header--active': isListVisible },
+          )
+        }
         type="button"
         onClick={changeListVisibility}
       >

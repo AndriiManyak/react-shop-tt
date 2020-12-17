@@ -1,6 +1,7 @@
 .ColorSelect {
   border-radius: 25px;
   background-color: white;
+  z-index: 1;
 
   &__list-header {
     display: flex;
@@ -8,10 +9,14 @@
     align-items: center;
     border: none;
     padding: 5px 15px;
-    background-color: white;
-    border-radius: 25px;
+    background-color: transparent;
     outline: none;
     cursor: pointer;
+
+    &--active {
+      background-color: white;
+      border-radius: 25px 25px 0 0;
+    }
   }
 
   &__selected-color {
@@ -25,12 +30,20 @@
   }
 
   &__list-wrapper {
-    padding: 5px 5px 20px 0;
+    position: relative;
+    background-color: white;
+    // padding: 5px 5px 20px 0;
   }
 
   &__list {
+    position: absolute;
+    left: 0;
+    right: 0;
     height: 85px;
     overflow-y: scroll;
+    background-color: white;
+    border-radius: 0 0 25px 25px;
+    padding-bottom: 10px;
 
     &::-webkit-scrollbar {
       width: 5px;
@@ -54,6 +67,7 @@
     text-align: left;
     cursor: pointer;
     border-radius: 0 25px 25px 0;
+    z-index: 1;
 
     &:hover {
       background-color: #afc9e2;

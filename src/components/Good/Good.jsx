@@ -30,14 +30,12 @@ export const Good = ({
     quantity: 1,
   });
 
-  const selectColor = useCallback(
-    (color) => {
-      setPurchase(prevState => ({
-        ...prevState,
-        color,
-      }));
-    }, [],
-  );
+  const selectColor = useCallback((color) => {
+    setPurchase(prevState => ({
+      ...prevState,
+      color,
+    }));
+  }, []);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
