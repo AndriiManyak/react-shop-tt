@@ -22,12 +22,13 @@ export const ColorSelect = React.memo(({
   }, []);
 
   const handleClickOutside = (event) => {
-    const { target } = event;
+    const targetClassList = event.target.classList;
 
     if (
-      !target.classList.contains('ColorSelect')
-      && !target.classList.contains('ColorSelect__list-header')
-      && !target.classList.contains('ColorSelect__select-arrow')
+      !targetClassList.contains('ColorSelect')
+      && !targetClassList.contains('ColorSelect__list-header')
+      && !targetClassList.contains('ColorSelect__select-arrow')
+      && !targetClassList.contains('ColorSelect__list-item')
     ) {
       setIsListVisible(false);
     }
