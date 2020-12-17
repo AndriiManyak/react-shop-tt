@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import React, { useCallback, useState } from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';

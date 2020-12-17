@@ -41,7 +41,7 @@ export const BasketGood = ({
         alt="shampoo"
         src={`images/${image}`}
       />
-      <p>{title}</p>
+      <p className="BasketGood__title">{title}</p>
       <p>{color}</p>
       <p>{`${size} мл`}</p>
 
