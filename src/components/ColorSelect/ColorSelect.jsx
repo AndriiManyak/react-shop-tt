@@ -27,6 +27,7 @@ export const ColorSelect = React.memo(({
     if (
       !target.classList.contains('ColorSelect')
       && !target.classList.contains('ColorSelect__list-header')
+      && !target.classList.contains('ColorSelect__select-arrow')
     ) {
       setIsListVisible(false);
     }
@@ -44,7 +45,12 @@ export const ColorSelect = React.memo(({
   return (
     <div className="ColorSelect">
       <button
-        className="ColorSelect__list-header"
+        className={
+          classNames(
+            'ColorSelect__list-header',
+            { 'ColorSelect__list-header--active': isListVisible },
+          )
+        }
         type="button"
         onClick={changeListVisibility}
       >
