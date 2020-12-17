@@ -17,6 +17,11 @@
     object-fit: contain;
   }
 
+  &__title {
+    font-size: 20px;
+    font-weight: 600;
+  }
+
   &__delete-button {
     border: none;
     background-color: transparent;
