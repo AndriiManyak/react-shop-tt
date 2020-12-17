@@ -1,5 +1,10 @@
 # Project Title
+React application
 - [DEMO](https://andriimanyak.github.io/react-shop-tt/)
+
+## Description
+Tech stack: JS, React, Redux, HTML5, CSS, SASS
+Design you can find [here](https://www.figma.com/file/L3uaEMANqqq7NeQuNskUUh/Тестовое-задание-(Copy)?node-id=0%3A1)
 
 ## Local deployment
 
@@ -8,7 +13,7 @@
 * NPM v6.14.4 and higher
 * React v17.0.1
 * React-dom": "^17.0.1",
-* "React-redux": "^7.2.2",
+* React-redux: "^7.2.2",
 * Classnames v2.2.6
 * Prop-types v15.7.2
 
