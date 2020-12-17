@@ -1,5 +1,5 @@
 # Project Title
-React application
+React application, Simple shop menu with basket
 - [DEMO](https://andriimanyak.github.io/react-shop-tt/)
 
 ## Description
